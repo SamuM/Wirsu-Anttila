@@ -20,14 +20,14 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$(".ratas").click(function() {
-		$(this).toggleClass("rotate");
+	$(".ratas, .menu-logout").click(function() {
+		$(".ratas").toggleClass("rotate");
 		$("#user-menu").slideToggle("slow", function() {
 		});		
 		
 	});
 	$("#user-menu").mouseleave(function() {
-		$(this).slideToggle();
+		$(this).slideToggle("fast");
 		$(".ratas").removeClass("rotate");
 	});
 
