@@ -216,6 +216,55 @@ header p {
 	
 }
 
+.submenu {
+    text-align: left;
+}
+.submenu li {
+    list-style: none;
+    display: inline-block;
+    background: #109BCE;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px 4px 1px 1px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;
+    left:30px;
+    position:relative;
+
+}
+
+.submenu li:hover {
+    top:3px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #07526e, 0px 5px 3px #999;
+}
+
+.submenu:before {
+    font-family: 'socialfont';
+    font-size: 50px;
+    line-height: 1em;
+    font-weight: normal;
+    color: #fff;
+    width:85px;
+    height:90px;
+    display:block;
+    position:absolute;
+    padding-top:10px;
+    top:10px;
+    text-shadow: 1px 1px 2px #07526e;
+
+}
+
+.submenu:hover:before {
+    top: 7px;
+    font-size: 50px;
+    text-shadow: 0px 3px 0px #07526e, 0px 5px 1px #07526e/*, 3px 0px 1px #07526e, 3px 3px 1px #07526e,
+     -2px 0px 1px #68cff2*/;
+}
+
+.submenu a {
+    color:white;
+    text-shadow:1px 1px 0px #07526e;
+}
+
 .menu-wrapper {
 	
 }

@@ -1,7 +1,7 @@
 
 <div class="container">
 <?php  
-	include('/adminmenu.php'); 
+
 
 	if(isset($_POST['submit'])){
 
