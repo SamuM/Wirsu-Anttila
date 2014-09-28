@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2014 at 07:45 PM
+-- Generation Time: Sep 28, 2014 at 08:20 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `wirsu-anttila`
 --
+CREATE DATABASE IF NOT EXISTS `wirsu-anttila` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `wirsu-anttila`;
 
 -- --------------------------------------------------------
 
