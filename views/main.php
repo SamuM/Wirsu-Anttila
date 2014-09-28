@@ -1,6 +1,7 @@
 <?php
 	$pageTitle = "Wirsu-Anttila Sukusivusto";
 	$section = "";
+    $adminHeader = false;
 ?>
 
 

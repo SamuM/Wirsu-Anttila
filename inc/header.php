@@ -19,25 +19,98 @@
 	//Hakee DB conffit
 	require_once("./config/db.php");
 	require_once("./classes/Login.php");
+    require("./config/session.php");
+
+
+
 ?>
 
 <header>
 	<h1>Wirsu-Anttila</h1>
 	<div class="menu-container">
 	<div class="menu-wrapper">
-	<ul>	
-			<li><a href="index.php">Uutiset</a></li>
-			<li><a href="index.php?wirsublog">Wirsu-Anttila Blogi</a></li>
-			<li><a href="index.php?paavonpakinat">Paavon Pakinat</a></li>
-			<li><a href="index.php?valokuvat">Valokuvat</a></li>
-			<li><a href="index.php?videot">Videot</a></li>
-			<li><a href="index.php?aaninauhat">Ääninauhat</a></li>				
-	</ul>
+
+    <?php
+
+    if(isset($_SESSION['adminHeader'])) {
+
+        if($_SESSION['adminHeader'] == 'showAdminMenu'){
+
+
+        ?>
+            <div class="admin-menu">
+
+                <ol>
+
+                    <li class="menu1">
+                        <a href="./index.php?uusiuutinen"><span>Uutiset </i></span> </a>
+
+                    </li>
+                    <li class="menu2">
+                        <a href="./index.php?adminBlog"><span>Wirsu-Anttila Blogi </span></a>
+                        <ol class="submenu">
+                            <li><a href="#">Lisää uusi</a></li>
+                            <li><a href="#">Muokkaa</a></li>
+                            <li><a href="#">Linnki</a></li>
+                            <li><a href="#">Linnki</a></li>
+                        </ol>
+                    <li class="menu3">
+                        <a href="./index.php?uusipakina""><span>Paavon Pakinat </span></a>
+                        <ol>
+                            <li><a href="./index.php?uusipakina">Lisää uusi</a></li>
+                            <li><a href="./index.php?muokkaapakina">Muokkaa</a></li>
+                            <li><a href="#">Linnki</a></li>
+                            <li><a href="#">Linnki</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu4">
+                        <a href="#"><span>Valokuvat </span></a>
+                        <ol>
+                            <li><a href="./index.php?lisaakuva">Lisää uusi</a></li>
+                            <li><a href="#">Muokkaa</a></li>
+                            <li><a href="#">Linnki</a></li>
+                            <li><a href="#">Linnki</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu5">
+                        <a href="#"><span>Videot </span></a>
+                        <ol>
+                            <li><a href="#">Lisää uusi</a></li>
+                            <li><a href="#">Muokkaa</a></li>
+                            <li><a href="#">Linnki</a></li>
+                            <li><a href="#">Linnki</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu6">
+                        <a href=""><span>Ääninauhat </span></a>
+                        <ol>
+                            <li><a href="#">Lisää uusi</a></li>
+                            <li><a href="#">Muokkaa</a></li>
+                            <li><a href="#">Linnki</a></li>
+                            <li><a href="#">Linnki</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu7">
+                        <a href="index.php?etusivu">Palaa Etusivulle</a>
+                    </li>
+                </ol>
+
+            </div>
+           <?php }else{ ?>
+        <ul>
+                <li><a href="index.php">Uutiset</a></li>
+                <li><a href="index.php?wirsublog">Wirsu-Anttila Blogi</a></li>
+                <li><a href="index.php?paavonpakinat">Paavon Pakinat</a></li>
+                <li><a href="index.php?valokuvat">Valokuvat</a></li>
+                <li><a href="index.php?videot">Videot</a></li>
+                <li><a href="index.php?aaninauhat">Ääninauhat</a></li>
+        </ul>
+          <?php }}?>
 	</div>
 
 <div class="menu-logout">
-	<p class="">Hei, <?php echo $_SESSION['user_name']; ?> ! 
-	<a class="fa fa-cog ratas"></a></p>
+	<p class="">Hei, <?php echo $_SESSION['user_name']; ?>! <span id="settings">Asetukset
+	<a class="fa fa-cog ratas"></a></span></p>
 
 	<div id="user-menu"> 
 

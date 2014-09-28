@@ -20,16 +20,20 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$(".ratas, .menu-logout").click(function() {
+	$("#settings").click(function() {
 		$(".ratas").toggleClass("rotate");
-		$("#user-menu").slideToggle("slow", function() {
-		});		
+		$("#user-menu").slideDown("slow", function() {
+
+		});
+
+        $("#user-menu").mouseleave(function () {
+            $("#user-menu").slideUp("fast");
+            $(".ratas").removeClass("rotate");
+        });
 		
 	});
-	$("#user-menu").mouseleave(function() {
-		$(this).slideToggle("fast");
-		$(".ratas").removeClass("rotate");
-	});
+
+
 
 
 	$(".menu-container li").mouseenter(function() {
@@ -41,9 +45,14 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
+   $()
+
+});
 
 
-$(document).ready(function() {		
+
+/*$(document).ready(function() {
 		$(".menu1, .menu2, .menu3, .menu4, .menu5, .menu6").click(function(e) {
 
 			if($(e.target).closest('span').length){
@@ -55,7 +64,7 @@ $(document).ready(function() {
 			}else{};
 	});
 	
-});
+});*/
 
 $(document).ready(function() {
 	$(".menu1, .menu2, .menu3, .menu4, .menu5, .menu6").mouseenter(function() {

@@ -1,6 +1,8 @@
 <?php
     $pageTitle = "Wirsu-Anttila Sukusivusto";
     $section = "";
+    $adminHeader = false;
+
     require_once("config/db.php");
 
     // Lataa login classin
@@ -11,7 +13,18 @@
     }
     else{
         include('inc/loginHeader.php');
-      }  
+      }
+
+
+
+    if(isset($_SESSION['adminHeader'])) {
+
+        if($_SESSION['adminHeader'] == 'showAdminMenu') {
+
+            include('inc/adminSubMenu.php');
+        }
+
+    };
    
 
 /**
@@ -66,25 +79,27 @@ if ($login->isUserLoggedIn() == true) {
     elseif(isset($_GET["admin"])){      //Tarkistaa onko käyttäjä admin
         foreach ($admins as $admin) {
             if($_SESSION["user_name"] == $admin['admin_username']){
+                $_SESSION['adminHeader'] = 'showAdminMenu';
                 include("views/admin/adminmain.php");
+
                 break;
             }            
         }
-    }  
+    }
     elseif(isset($_GET["uusiuutinen"])){      //Tarkistaa onko käyttäjä admin
         foreach ($admins as $admin) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/lisaauutinen.php");
                 break;
-            }            
+            }
         }
-    } 
+    }
     elseif(isset($_GET["muokkaauutista"])){      //Tarkistaa onko käyttäjä admin
         foreach ($admins as $admin) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/muokkaauutista.php");
                 break;
-            }            
+            }
         }
     }
     elseif(isset($_GET["muokkaauutisID"])){      //Tarkistaa onko käyttäjä admin
@@ -92,7 +107,7 @@ if ($login->isUserLoggedIn() == true) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/uutisedit.php");
                 break;
-            }            
+            }
         }
     }
     elseif(isset($_GET["lisaakuva"])){      //Tarkistaa onko käyttäjä admin
@@ -100,7 +115,7 @@ if ($login->isUserLoggedIn() == true) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/lisaakuva.php");
                 break;
-            }            
+            }
         }
     }
     elseif(isset($_GET["uusipakina"])){      //Tarkistaa onko käyttäjä admin
@@ -108,7 +123,7 @@ if ($login->isUserLoggedIn() == true) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/lisaapakina.php");
                 break;
-            }            
+            }
         }
     }
     elseif(isset($_GET["muokkaapakina"])){      //Tarkistaa onko käyttäjä admin
@@ -116,7 +131,7 @@ if ($login->isUserLoggedIn() == true) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/muokkaapakina.php");
                 break;
-            }            
+            }
         }
     }
     elseif(isset($_GET["muokkaapakinaID"])){      //Tarkistaa onko käyttäjä admin
@@ -124,7 +139,17 @@ if ($login->isUserLoggedIn() == true) {
             if($_SESSION["user_name"] == $admin['admin_username']){
                 include("views/admin/pakinaedit.php");
                 break;
-            }            
+            }
+        }
+    }
+    elseif(isset($_GET["etusivu"])){      //Tarkistaa onko käyttäjä admin
+        foreach ($admins as $admin) {
+            if($_SESSION["user_name"] == $admin['admin_username']){
+                $_SESSION['adminHeader'] = 'dontShowAdminMenu';
+                include("views/main.php");
+
+                break;
+            }
         }
     }
     else{

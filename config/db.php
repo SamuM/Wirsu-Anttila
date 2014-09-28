@@ -34,5 +34,7 @@ while($admin = $adminkysely->fetch()) {
 	$admins[] = $admin;
 }
 
+
+
 date_default_timezone_set('Europe/Helsinki');
 ?>
