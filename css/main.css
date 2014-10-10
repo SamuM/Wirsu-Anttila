@@ -295,7 +295,9 @@ header p {
 }
 
 .menu-container {
-	
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
 
 	
 } 
@@ -425,7 +427,7 @@ header p {
 }
 
 #user-menu {	
-	position: absolute;	
+	position: absolute;
 	box-shadow: 0px 5px 5px #6B6B6B;	
 	display: none;
 	overflow: hidden;
@@ -692,7 +694,7 @@ header p {
   column-count:         3;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 885px) {
   #photos {
   -moz-column-count:    2;
   -webkit-column-count: 2;
@@ -719,9 +721,18 @@ header p {
   	
   }
 
-  .menu-wrapper {
-  	margin-left: -52;
-  }
+
+    .menu-wrapper li a {
+
+        margin-left: 15px;
+
+    }
+
+    .menu-logout {
+        margin-left: 18px;
+    }
+
+
 
   header {
   	height: 425px;
